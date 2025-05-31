@@ -124,6 +124,18 @@ public class Link {
     }
 }
 
+ // edit student information
+    public void editStudent(String id, String name, String gpa) {
+        for (Student student : students) {
+            if (student.getId() == Integer.parseInt(id)) {
+                student.name = name;
+                student.GPA = gpa;
+                updateFile(); 
+                break;
+            }
+        }
+    }
+
 class Student { String name; String GPA; int id; String edit; String delete;
 
     public Student() { this(0,"",""); }
